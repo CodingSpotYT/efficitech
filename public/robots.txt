@@ -1,7 +1,4 @@
 # Allow all robots to access all content
 User-agent: *
-Disallow:
 
-# Block specific directories or pages (uncomment the next lines if needed)
-# Disallow: /private/
-# Disallow: /admin/
+Sitemap: https://efficitech.vercel.app/sitemap.xml
