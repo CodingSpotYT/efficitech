@@ -406,11 +406,11 @@ body.dark-mode .card-content .btn:hover {
 /* Responsiveness */
 @media (max-width: 768px) {
   .wrapper {
-    clip-path: circle(50% at calc(100% - 45px) 45px);
+    clip-path: circle(2% at calc(100% - 45px) 43px);
   }
 
   .logo img {
-    width: 150px;
+    width: 200px;
   }
 
   .content .title {
@@ -420,37 +420,25 @@ body.dark-mode .card-content .btn:hover {
   .content p {
     font-size: 25px;
   }
-
+  .section-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .section-2 .title {
     font-size: 80px;
   }
 
   .section-2 p {
-    font-size: 25px;
+    font-size: 20px;
+    width: 90%;
   }
 
   .section-3 .projects {
     flex-direction: column;
   }
 
-  .project-card {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
 
-  .project-card .card-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .menu-btn {
-    right: 10px;
-    top: 10px;
-    height: 40px;
-    width: 40px;
-    font-size: 18px;
-  }
 
   .wrapper ul li a {
     font-size: 24px;
@@ -470,47 +458,73 @@ body.dark-mode .card-content .btn:hover {
   .content p {
     font-size: 20px;
   }
-
-  .menu-btn {
-    right: 5px;
-    top: 5px;
-    height: 35px;
-    width: 35px;
-    font-size: 16px;
-  }
-
-  .project-card {
-    width: 90%;
-    height: auto;
-  }
 }
 
-/* Dark Mode Toggle Button */
+/* Dark Mode Toggle */
 .dark-mode-toggle {
   position: fixed;
-  top: 25px;
-  right: 90px;
-  background-color: #4e5a74;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 16px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.switch {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: #4e5a74;
+  border-radius: 50px;
+  position: relative;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  z-index: 3;
+  transition: background 0.3s ease;
 }
 
-.dark-mode-toggle:hover {
-  background-color: #6b86b4;
+.slider {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Dark Mode Styles for the Toggle Button */
-body.dark-mode .dark-mode-toggle {
-  background-color: #6b86b4;
-  color: #fff;
+.slider i {
+  position: absolute;
+  font-size: 14px;
+  color: #4e5a74;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-body.dark-mode .dark-mode-toggle:hover {
-  background-color: #4e5a74;
+.slider .fa-moon {
+  opacity: 0;
+  color: white;
+}
+
+/* Checkbox Hide */
+#darkModeSwitch {
+  display: none;
+}
+
+/* Dark Mode Active */
+#darkModeSwitch:checked + .switch {
+  background: #4e5a74;
+}
+
+#darkModeSwitch:checked + .switch .slider {
+  transform: translateX(30px);
+  background: #2e3b47;
+}
+
+#darkModeSwitch:checked + .switch .fa-sun {
+  opacity: 0;
+}
+
+#darkModeSwitch:checked + .switch .fa-moon {
+  opacity: 1;
 }
