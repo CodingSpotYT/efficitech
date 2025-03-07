@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
+<html lang="en" dir="ltr"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -28,13 +25,13 @@
   
   <!-- Link to Stylesheets -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   
   <!-- Link to Favicon -->
   <link rel="icon" type="image/x-icon" href="images/EfficitechFavicon.jpeg">
   
   <!-- Scripts -->
-  <script src="app.js" defer></script>
+  <script src="app.js" defer=""></script>
 </head>
 
 <body>
@@ -42,7 +39,7 @@
   <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
 
   <div class="logo">
-    <img src="images/EfficitechLogo.svg" alt="Logo" />
+    <img src="images/EfficitechLogo.svg" alt="Logo">
   </div>
 
   <div class="wrapper">
@@ -201,17 +198,15 @@
       </div>
     </div>
 </div>
-<div class="dark-mode-toggle">
-  <input type="checkbox" id="darkModeSwitch">
-  <label for="darkModeSwitch" class="switch">
-    <span class="slider">
-      <i class="fas fa-sun"></i>
-      <i class="fas fa-moon"></i>
-    </span>
-  </label>
-</div>
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
 
 
-</body>
 
-</html>
+
+<div id="veepn-breach-alert"></div><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style><div id="veepn-guard-alert"></div><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></body></html>
