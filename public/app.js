@@ -7,13 +7,13 @@ document.querySelectorAll('.read-more').forEach((button) => {
       // Toggle expanded state
       card.classList.toggle('expanded');
       if (card.classList.contains('expanded')) {
-        fullDescription.style.display = 'block'; // Show full description
-        description.style.display = 'none'; // Hide the truncated description
-        button.textContent = 'Read Less'; // Change button text
+        fullDescription.style.display = 'block';
+        description.style.display = 'none';
+        button.textContent = 'Read Less'; 
       } else {
-        fullDescription.style.display = 'none'; // Hide full description
-        description.style.display = 'block'; // Show truncated description
-        button.textContent = 'Read More'; // Change button text
+        fullDescription.style.display = 'none';
+        description.style.display = 'block';
+        button.textContent = 'Read More';
       }
     });
 });
@@ -25,4 +25,27 @@ document.querySelectorAll(".wrapper-link").forEach(link => {
   });
 }); 
 
-// hello
+
+document.getElementById("darkModeSwitch").addEventListener("change", function () {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("currentMode", "dark");
+  } else {
+    localStorage.setItem("currentMode", "light");
+  }
+});
+
+window.onload = () => {
+  if (!localStorage.getItem("currentMode")) {
+    localStorage.setItem("currentMode", "light");
+  }
+
+  if (localStorage.getItem("currentMode") === "light") {
+    document.body.classList.remove("dark-mode");
+    document.getElementById("darkModeSwitch").checked = false;
+  } else if (localStorage.getItem("currentMode") === "dark") {
+    document.body.classList.add("dark-mode");
+    document.getElementById("darkModeSwitch").checked = true;
+  }
+}
