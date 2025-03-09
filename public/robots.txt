@@ -1,0 +1,4 @@
+# Allow all robots to access all content
+User-agent: *
+
+Sitemap: https://efficitech.vercel.app/sitemap.xml

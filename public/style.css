@@ -1,0 +1,606 @@
+@font-face {
+  font-family: 'DejaVu Sans';
+  src: url('./fonts/dejavu-sans-webfont.woff2') format('woff2'),
+       url('/fonts/dejavu-sans-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DejaVu Sans", sans-serif;
+  border: none;
+}
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #f0f4ff; /* Light Gray background */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Wrapper */
+.wrapper {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(45deg, #bfcfff 0%, #bfcfff 45%, #6b86b4 100%);
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+
+#active:checked ~ .wrapper {
+  clip-path: circle(75%); /* Expand the circle */
+}
+
+/* Menu Button */
+.menu-btn {
+  position: fixed;
+  z-index: 2;
+  right: 20px;
+  top: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 55px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(45deg, #bfcfff 0%, #bfcfff 45%, #6b86b4 100%);
+  transition: all 0.3s ease-in-out;
+}
+
+#active:checked ~ .menu-btn {
+  background: #fff;
+  color: #4158d0;
+}
+
+/* Switch the icon when checkbox is checked */
+#active:checked ~ .menu-btn i:before {
+  content: "\f00d"; /* Change to "close" icon */
+}
+
+/* Menu List */
+.wrapper ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  display: none; /* Initially hidden */
+  flex-direction: column; /* Stack the items vertically */
+}
+
+#active:checked ~ .wrapper ul {
+  display: flex; /* Make it visible when checkbox is checked */
+}
+
+.wrapper ul li {
+  margin: 15px 0;
+}
+
+.wrapper ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  position: relative;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+
+.wrapper ul li a:after {
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.wrapper ul li a:hover:after {
+  transform: scaleY(1);
+}
+
+.wrapper ul li a:hover {
+  color: #4158d0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.logo img {
+  width: 300px;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.section-1 .title {
+  transition: all 100ms;
+  font-size: 100px;
+}
+
+.section-1 .title:hover {
+  font-size: 110px;
+}
+
+
+.content .title {
+  color: #4e5a74;
+  font-size: 100px;
+  font-weight: 100;
+}
+
+.section-1 a, .section-2 a{
+  color: #4e5a74;
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section-1 a::before, .section-2 a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 5px;
+  left: 0;
+  background-color: #4e5a74;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.section-1 a:hover::before,  .section-2 a:hover::before{
+  transform: scaleX(1);
+}
+
+.content p {
+  color: #4e5a74;
+  font-size: 35px;
+  font-weight: 100;
+}
+
+.section-2 .title {
+  transition: all 100ms;
+  font-size: 100px;
+}
+
+.section-2 .title:hover {
+  font-size: 110px;
+}
+
+.section-2 .about-text {
+  text-align: justify;
+  hyphens: auto; /* Improve word breaking for cleaner justification */
+  line-height: 1.6; /* Improve readability */
+}
+
+.section-2 .scroll-text {
+  text-align: center;
+}
+
+.section-2 .about-text::first-letter {
+  font-size: 3.5em; /* Scales better across devices */
+  font-weight: bold;
+  float: left;
+  line-height: 1; /* Keep it vertically aligned */
+  margin-right: 10px;
+  color: #4e5a74;
+}
+
+
+
+
+/* Section 2: Projects */
+.section-3 {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: #4e5a74;
+  text-align: center;
+  padding: 40px 20px;
+  z-index: -5;
+}
+
+.section-3 .title {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  background-size: cover;
+  background-position: center;
+  width: 70%;
+  height: 70%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-content {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: bottom 0.3s ease;
+  text-align: center;
+}
+
+.card-content h3,
+.card-content p,
+.card-content .btn {
+  margin: 0;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Hover Effect */
+.project-card:hover .card-content {
+  bottom: 0;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card:hover .card-image {
+  opacity: 0.8;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6b86b4;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4e5a74;
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(1);
+}
+
+/* General Input and Checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Card expanded state */
+.project-card.expanded {
+  height: auto;
+  overflow: visible;
+}
+
+.project-card.expanded .card-content {
+  bottom: 0;
+  transition: none;
+}
+
+/* Description and Read More button */
+.card-content .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  max-width: 100%;
+}
+
+.card-content .full-description {
+  display: none;
+  margin-top: 10px;
+  color: #333;
+}
+
+.card-content .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4e5a74;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.card-content .btn:hover {
+  background-color: #6b86b4;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #2e3b47; /* Dark background */
+  color: #f0f4ff; /* Light text */
+}
+
+body.dark-mode .wrapper {
+  background: linear-gradient(45deg, #3b4a59 0%, #3b4a59 45%, #2b3746 100%);
+}
+
+body.dark-mode .menu-btn {
+  background: #3b4a59;
+  color: #fff;
+}
+
+body.dark-mode .wrapper ul li a {
+  color: #fff;
+}
+
+body.dark-mode .wrapper ul li a:hover {
+  color: #6b86b4;
+}
+
+body.dark-mode .wrapper ul li a:hover:after {
+  background: #6b86b4;
+}
+
+body.dark-mode .logo img {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .content .title,
+body.dark-mode .section-2 .title,
+body.dark-mode .section-3 .title {
+  color: #f0f4ff;
+}
+
+body.dark-mode .content p,
+body.dark-mode .section-2 p,
+body.dark-mode .section-3 .projects .project-card .card-content h3,
+body.dark-mode .section-3 .projects .project-card .card-content p,
+body.dark-mode .section-2 .about-text::first-letter, 
+body.dark-mode .content a,
+body.dark-mode .content a::before  {
+  color: #f0f4ff;
+}
+
+body.dark-mode .content a::before {
+  background-color: #f0f4ff;
+}
+
+body.dark-mode .project-card {
+  background-color: #3b4a59;
+}
+
+body.dark-mode .card-content {
+  background: rgba(0, 0, 0, 0.8);
+  color: #f0f4ff;
+}
+
+body.dark-mode .project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .project-card:hover .card-image {
+  opacity: 0.7;
+}
+
+body.dark-mode .card-content .btn {
+  background-color: #6b86b4;
+  color: white;
+}
+
+body.dark-mode .card-content .btn:hover {
+  background-color: #4e5a74;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .wrapper {
+    clip-path: circle(2% at calc(100% - 45px) 43px);
+  }
+
+  .logo img {
+    width: 200px;
+  }
+
+  .content .title {
+    font-size: 80px;
+  }
+
+  .content p {
+    font-size: 25px;
+  }
+  .section-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .section-2 .title {
+    font-size: 80px;
+  }
+
+  .section-2 p {
+    font-size: 20px;
+    width: 90%;
+  }
+
+  .section-3 .projects {
+    flex-direction: column;
+  }
+
+
+
+  .wrapper ul li a {
+    font-size: 24px;
+  }
+
+  .project-card:hover .card-content {
+    bottom: 0;
+  }
+}
+
+
+
+/* Dark Mode Toggle */
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  transition: bottom 0.3s ease, right 0.3s ease; /* Smooth transition when position changes */
+}
+
+.switch {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: #4e5a74;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider i {
+  position: absolute;
+  font-size: 14px;
+  color: #4e5a74;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.slider .fa-moon {
+  opacity: 0;
+  color: white;
+}
+
+/* Checkbox Hide */
+#darkModeSwitch {
+  display: none;
+}
+
+/* Dark Mode Active */
+#darkModeSwitch:checked + .switch {
+  background: #4e5a74;
+}
+
+#darkModeSwitch:checked + .switch .slider {
+  transform: translateX(30px);
+  background: #2e3b47;
+}
+
+#darkModeSwitch:checked + .switch .fa-sun {
+  opacity: 0;
+}
+
+#darkModeSwitch:checked + .switch .fa-moon {
+  opacity: 1;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  .dark-mode-toggle {
+    bottom: 10px; /* Reduce bottom distance for small screens */
+    right: 10px;  /* Reduce right distance for small screens */
+  }
+
+  .switch {
+    width: 50px;  /* Smaller width for smaller screens */
+    height: 25px; /* Smaller height for smaller screens */
+  }
+
+  .slider {
+    width: 22px;  /* Smaller slider size */
+    height: 22px; /* Smaller slider size */
+  }
+}
+
+/* Prevent off-screen position */
+@media (max-width: 767px) {
+  .dark-mode-toggle {
+    right: 5%; /* Ensure button is always within the screen on smaller devices */
+    bottom: 5%; /* Ensure button is always within the screen on smaller devices */
+  }
+}
