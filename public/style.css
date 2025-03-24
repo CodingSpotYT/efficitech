@@ -88,12 +88,15 @@ body.dark-mode .loader-wrapper {
 
 /* Navigation */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
   transition: all 0.4s ease;
   backdrop-filter: blur(10px);
   background-color: rgba(240, 244, 255, 0.8);
