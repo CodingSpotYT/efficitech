@@ -599,7 +599,7 @@ body.dark-mode .btn-secondary {
 
 /* Dark Mode Toggle */
 .dark-mode-toggle {
-  position: fixed;
+  position: absolute;
   bottom: 2rem;
   right: 2rem;
   z-index: 100;
