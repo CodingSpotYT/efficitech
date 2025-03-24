@@ -7,9 +7,9 @@ window.addEventListener('load', () => {
   }, 800);
   
   let scroll = new LocomotiveScroll({
-    el: document.querySelector('#scroll-container'),
+    el: document.querySelector('[data-scroll-container]'),
     smooth: true,
-    multiplier: .8,
+    multiplier: .5,
     smartphone: {
       smooth: true
     },
@@ -17,6 +17,7 @@ window.addEventListener('load', () => {
       smooth: true
     }
   });
+  scroll.update()
 
   const handleResize = () => {
     const desiredType = 'vertical' // 'horizontal' or 'vertical'
@@ -35,12 +36,6 @@ window.addEventListener('load', () => {
       });
     }
   }
-
-  scroll.on('scroll', () => {
-    // Triggering a manual update for the sticky element to sync with Locomotive scroll
-    const navbar = document.querySelector('.navbar');
-    navbar.style.position = 'sticky'; // Ensuring sticky positioning
-  });
 
   const anchorLinks = document.querySelectorAll('.fixed-nav .location');
 
