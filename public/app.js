@@ -17,6 +17,7 @@ window.addEventListener('load', () => {
       smooth: true
     }
   });
+
   scroll.update()
 
   const handleResize = () => {
@@ -37,7 +38,9 @@ window.addEventListener('load', () => {
     }
   }
 
-  const anchorLinks = document.querySelectorAll('.fixed-nav .location');
+  const anchorLinks = document.querySelectorAll(
+    'a[href^=\\#]:not([href$=\\#])'
+  );
 
   anchorLinks.forEach((anchorLink) => {
     let hashval = anchorLink.getAttribute('href');
@@ -47,9 +50,16 @@ window.addEventListener('load', () => {
       e.preventDefault();
       e.stopPropagation();
 
-      locomotiveScroll.scrollTo(target);
+      anchorLinks.forEach((anchorLink) => {
+        anchorLink.classList.remove('active');
+      });
+
+      e.target.classList.add('active');
+
+      scroll.scrollTo(target);
     });
   });
+
   
   // Show content after loader is hidden
   document.querySelector('.smooth-scroll').classList.add('visible');
