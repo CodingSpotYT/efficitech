@@ -123,6 +123,29 @@ window.addEventListener('load', () => {
     });
   });
   
+  // Disclaimer modal functionality
+  const disclaimerBtn = document.getElementById('disclaimerBtn');
+  const disclaimerModal = document.getElementById('disclaimerModal');
+  const closeModal = document.getElementById('closeModal');
+  
+  disclaimerBtn.addEventListener('click', () => {
+    disclaimerModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  
+  closeModal.addEventListener('click', () => {
+    disclaimerModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+  
+  // Close modal when clicking outside
+  disclaimerModal.addEventListener('click', (e) => {
+    if (e.target === disclaimerModal) {
+      disclaimerModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       document.querySelector('.navbar').classList.add('scrolled');
@@ -131,8 +154,6 @@ window.addEventListener('load', () => {
     }
   });
   
-  
-
   // Intersection Observer for animations
   const observerOptions = {
     threshold: 0.1
