@@ -59,8 +59,8 @@
       <p>All projects under the Efficitech name are currently jointly owned by CodingSpotYT and GitGutter123. However, if the partnership were to dissolve in the future, each creator would retain full ownership and rights to their respective projects.</p>
       <p>Here's the ownership breakdown:</p>
       <ul class="ownership-list">
-        <li><strong>CodingSpotYT:</strong> SchoolOrganized, SchoolOrganizedExt, RemindMe, DeckedOut, QuickTab, WebTracker</li>
-        <li><strong>GitGutter123:</strong> TabVault, ClipNote</li>
+        <li><strong>CodingSpotYT:</strong> SchoolOrganized, SchoolOrganizedExt, RemindMe, DeckedOut</li>
+        <li><strong>GitGutter123:</strong> TabVault, ClipNote, QuickTab, WebTracker</li>
       </ul>
       <button class="btn btn-primary" id="closeModal">I Understand</button>
     </div>
@@ -116,12 +116,149 @@
       </div>
     </section>
     
-        <!-- Projects Section -->
+    <!-- Projects Section -->
     <section id="projects">
       <h2 class="section-title">Our Projects</h2>
       
-      <div class="projects-container" id="projectsContainer">
-        <!-- Projects will be loaded dynamically -->
+      <div class="projects-container">
+        <!-- SchoolOrganized -->
+        <div class="project-card">
+          <img src="images/SchoolOrganized.png" alt="SchoolOrganized" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">SchoolOrganized</h3>
+            <p class="project-creator">By CodingSpotYT</p>
+            <p class="project-description">Bookmarks Organizer that transforms cluttered bookmarks into a clean, customizable system for effortless navigation.</p>
+            <div class="project-buttons">
+              <a href="https://schoolorganized.github.io/-" target="_blank" class="btn btn-primary">View Project</a>
+              <button class="btn btn-secondary read-more">Details</button>
+            </div>
+            <div class="full-description" style="display: none;">
+              <p>Traditional browser bookmarks are cluttered and difficult to navigate. SchoolOrganized is designed to fix that with a clean, customizable, and intuitive system that makes organizing and accessing your saved links effortless. Whether for school, research, or personal use, it keeps everything neatly structured, so you can find what you need instantly.</p>
+              <p>No more scrolling through endless folders—SchoolOrganized brings order to your bookmarks.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- SchoolOrganizedExt -->
+        <div class="project-card">
+          <img src="images/SchoolOrganizedExt.png" alt="SchoolOrganizedExt" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">SchoolOrganizedExt</h3>
+            <p class="project-creator">By CodingSpotYT</p>
+            <p class="project-description">SchoolOrganized but as a convenient browser extension for quick access.</p>
+            <div class="project-buttons">
+              <a href="https://github.com/Efficitech/SchoolOrganizedExtention" target="_blank" class="btn btn-primary">View Project</a>
+              <button class="btn btn-secondary read-more">Details</button>
+            </div>
+            <div class="full-description" style="display: none;">
+              <p>All the functionality of SchoolOrganized, now available as a browser extension for even faster access to your organized bookmarks.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- RemindMe -->
+        <div class="project-card">
+          <img src="images/RemindMe.png" alt="RemindMe" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">RemindMe</h3>
+            <p class="project-creator">By CodingSpotYT</p>
+            <p class="project-description">Reminder Extension that keeps you on track with customizable, themeable reminders.</p>
+            <div class="project-buttons">
+              <a href="https://github.com/Efficitech/RemindMe/" target="_blank" class="btn btn-primary">View Project</a>
+              <button class="btn btn-secondary read-more">Details</button>
+            </div>
+            <div class="full-description" style="display: none;">
+              <p>RemindMe is a Chrome extension that keeps you on track with effortless, customizable reminders. Stay organized without switching tabs—just set a reminder, choose a theme that fits your style, and let RemindMe handle the rest. Simple, sleek, and always there when you need it.</p>
+              <p>Never forget a task again—right from your browser.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- TabVault -->
+        <div class="project-card">
+          <img src="images/TabVault.png" alt="TabVault" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">TabVault</h3>
+            <p class="project-creator">By GitGutter123</p>
+            <p class="project-description">Tab Group Saver that lets you save, organize, and restore tab groups effortlessly.</p>
+            <div class="project-buttons">
+              <a href="https://github.com/Efficitech/TabVault" target="_blank" class="btn btn-primary">View Project</a>
+              <button class="btn btn-secondary read-more">Details</button>
+            </div>
+            <div class="full-description" style="display: none;">
+              <p>Tired of losing important tabs? TabVault is a Chrome extension that lets you save, organize, and restore tab groups effortlessly. Whether for work, research, or daily browsing, keep everything neatly stored and accessible—without cluttering your browser.</p>
+              <p>Save your tabs. Stay organized. Browse smarter.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- DeckedOut -->
+        <div class="project-card">
+          <img src="images/DeckedOut.png" alt="DeckedOut" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">DeckedOut</h3>
+            <p class="project-creator">By CodingSpotYT</p>
+            <p class="project-description">Online Study Flashcards designed to optimize your study sessions with shuffle functionality.</p>
+            <div class="project-buttons">
+              <a href="https://deckedout.vercel.app" target="_blank" class="btn btn-primary">View Project</a>
+              <button class="btn btn-secondary read-more">Details</button>
+            </div>
+            <div class="full-description" style="display: none;">
+              <p>Decked Out is an efficient flashcard app designed to optimize your study sessions. Create, organize, and review flashcards with ease. Save your sets for future use and shuffle them for a fresh experience each time. Whether for exam prep, learning a new skill, or daily practice, Decked Out keeps you focused and in control of your learning.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- WebTracker -->
+        <div class="project-card">
+          <img src="images/WebTracker.png" alt="WebTracker" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">WebTracker</h3>
+            <p class="project-creator">By GitGutter123</p>
+            <p class="project-description">Track Your Web Activity with detailed reports on your browsing habits.</p>
+            <div class="project-buttons">
+              <a href="https://github.com/Efficitech/WebTracker" target="_blank" class="btn btn-primary">View Project</a>
+              <button class="btn btn-secondary read-more">Details</button>
+            </div>
+            <div class="full-description" style="display: none;">
+              <p>WebTracker helps you monitor your time spent across websites. Gain insights into your browsing habits with detailed reports, track productivity, and make informed decisions about your online usage.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ClipNote -->
+        <div class="project-card">
+          <img src="images/ClipNote.png" alt="ClipNote" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">ClipNote</h3>
+            <p class="project-creator">By GitGutter123</p>
+            <p class="project-description">Intelligent Note Summarization that transforms highlighted text into concise notes.</p>
+            <div class="project-buttons">
+              <a href="https://github.com/Efficitech/ClipNote" target="_blank" class="btn btn-primary">View Project</a>
+              <button class="btn btn-secondary read-more">Details</button>
+            </div>
+            <div class="full-description" style="display: none;">
+              <p>ClipNote is an advanced note-taking solution designed for efficiency and clarity. By simply highlighting text, users can seamlessly save key information as notes, with the added ability to generate concise, non-AI-powered summaries. This innovative feature ensures that insights remain digestible and actionable, transforming the way professionals, students, and researchers organize knowledge. With a sleek interface and intelligent automation, ClipNote redefines the future of digital note-taking.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- QuickTab -->
+        <div class="project-card">
+          <img src="images/QuickTab.png" alt="QuickTab" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">QuickTab</h3>
+            <p class="project-creator">By GitGutter123</p>
+            <p class="project-description">Quick Keybinds for Fast Navigation with custom shortcuts to your favorite sites.</p>
+            <div class="project-buttons">
+              <a href="https://github.com/Efficitech/QuickTab" target="_blank" class="btn btn-primary">View Project</a>
+              <button class="btn btn-secondary read-more">Details</button>
+            </div>
+            <div class="full-description" style="display: none;">
+              <p>QuickTab allows you to set custom keybinds for your frequently visited websites, enabling fast, one-click access directly to any URL of your choice. Simply assign a key combination to a website, and with a press of a button, you're instantly redirected to that page, boosting productivity and saving time.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
