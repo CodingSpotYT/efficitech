@@ -909,3 +909,89 @@ body.dark-mode .btn-secondary {
 .toggle-animate .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
+
+/* Downloads Section */
+#downloads {
+  background-color: var(--bg-light);
+  padding-bottom: 8rem;
+}
+
+body.dark-mode #downloads {
+  background-color: var(--bg-dark);
+}
+
+.instructions-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.instruction-card {
+  background-color: var(--card-bg-light);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+body.dark-mode .instruction-card {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.instruction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .instruction-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.instruction-icon {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+body.dark-mode .instruction-icon {
+  color: var(--text-light);
+}
+
+.instruction-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+body.dark-mode .instruction-title {
+  color: var(--text-light);
+}
+
+.instruction-steps ol {
+  padding-left: 1.5rem;
+}
+
+.instruction-steps li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+body.dark-mode .instruction-steps li {
+  color: var(--text-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .instructions-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .instruction-card {
+    padding: 1.5rem;
+  }
+}
