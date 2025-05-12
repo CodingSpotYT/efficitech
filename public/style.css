@@ -986,7 +986,7 @@ body.dark-mode .instruction-steps li {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1020px) {
   .instructions-container {
     grid-template-columns: 1fr;
   }
